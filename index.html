@@ -1,0 +1,807 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Himanshu Sahu | Unh India</title>
+
+  <!-- Meta Description -->
+  <meta name="description"
+    content="Himanshu Sahu - Digital Marketing Specialist. We are a digital marketing agency that helps businesses grow their online presence and reach their target audience." />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://unhindia.github.io/Himanshu-sahu/" />
+  <meta property="og:title" content="Himanshu sahu | Unh India" />
+  <meta property="og:description"
+    content="Himanshu Sahu - Digital Marketing Specialist. We are a digital marketing agency that helps businesses grow their online presence and reach their target audience." />
+  <meta property="og:image"
+    content="https://www.dropbox.com/scl/fi/a8pbj5g8drula5fgl67gj/unh-logo.png?rlkey=x4j1v9mqcndok70056qred8io&st=27yqhh0q&raw=1" />
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    body {
+      font-family: Poppins, sans-serif;
+      background: #f1f3f6;
+      padding: 40px 20px
+    }
+
+    .wrapper {
+      max-width: 600px;
+      margin: 0 auto
+    }
+
+    .banner img,
+    .banner video {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 14px;
+      display: block
+    }
+
+    .profile-box {
+      margin: -60px 15px 0;
+      background: #fff;
+      border-radius: 16px;
+      padding: 25px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, .1);
+      text-align: center
+    }
+
+    .profile-box img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #fff;
+      transition: transform .3s;
+      cursor: pointer
+    }
+
+    .profile-box img:hover {
+      transform: scale(1.05)
+    }
+
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, .9);
+      z-index: 10000;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer
+    }
+
+    .modal-overlay.active {
+      display: flex
+    }
+
+    .modal-content {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, .5)
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 40px;
+      color: #fff;
+      cursor: pointer;
+      transition: color .3s
+    }
+
+    .modal-close:hover {
+      color: #ccc
+    }
+
+    .profile-box h3 {
+      margin-top: 15px;
+      margin-bottom: 5px;
+      font-size: 24px;
+      font-weight: 600
+    }
+
+    .profile-box .subtitle {
+      color: #6c757d;
+      margin-bottom: 5px
+    }
+
+    .profile-box .company {
+      font-weight: 600;
+      margin-bottom: 15px
+    }
+
+    .profile-box .description {
+      margin-top: 15px;
+      line-height: 1.6
+    }
+
+    .social-icons {
+      margin-top: 20px
+    }
+
+    .social-icons a {
+      display: inline-block;
+      margin: 0 10px;
+      font-size: 26px;
+      color: #333;
+      transition: all .3s
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.2);
+      color: #007bff
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin: 30px 15px 0
+    }
+
+    .contact-grid .full-width {
+      grid-column: 1/-1
+    }
+
+    .info-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 18px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .06);
+      transition: transform .3s
+    }
+
+    .info-card:hover {
+      transform: translateY(-4px)
+    }
+
+    .info-card h6 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px
+    }
+
+    .info-card h6 i {
+      margin-right: 8px
+    }
+
+    .info-card a {
+      color: #007bff;
+      text-decoration: none
+    }
+
+    .info-card a:hover {
+      text-decoration: underline
+    }
+
+    .qr-section {
+      text-align: center;
+      margin-top: 50px
+    }
+
+    .qr-section h4 {
+      font-size: 20px;
+      margin-bottom: 20px
+    }
+
+    .qr-box {
+      display: inline-block;
+      padding: 15px;
+      background: #f9f9f9;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .1)
+    }
+
+    .qr-box img {
+      display: block;
+      cursor: pointer
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 50px;
+      margin-bottom: 30px;
+      color: #6c757d
+    }
+
+    .sticky-btn-wrapper {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000
+    }
+
+    .add-contact-btn {
+      background: #000;
+      color: #fff;
+      padding: 15px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .4);
+      transition: all .3s
+    }
+
+    .add-contact-btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, .6);
+      color: #fff
+    }
+
+    .share-btn {
+      position: fixed;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      background: #000;
+      color: #fff;
+      padding: 14px 18px;
+      border-radius: 12px 0 0 12px;
+      font-size: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, .25);
+      text-decoration: none;
+      transition: all .3s;
+      z-index: 9999
+    }
+
+    .share-btn:hover {
+      background: #afafaf
+    }
+
+    .section-header {
+      text-align: center;
+      font-size: 20px;
+      margin: 40px 0 20px;
+      position: relative;
+      padding-bottom: 15px;
+      color: #333
+    }
+
+    .section-island {
+      background: #fff;
+      border-radius: 16px;
+      padding: 25px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, .1);
+      margin: 20px 15px
+    }
+
+    .section-island .section-header {
+      margin-top: 0
+    }
+
+    .gallery-card,
+    .product-card,
+    .testimonial-card {
+      background: #f9f9f9;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+      margin: 10px;
+      transition: transform .3s
+    }
+
+    .gallery-card:hover,
+    .product-card:hover,
+    .testimonial-card:hover {
+      transform: translateY(-5px)
+    }
+
+    .gallery-card a {
+      display: block
+    }
+
+    .gallery-card img {
+      width: 100%;
+      max-width: 250px;
+      height: 350px;
+      object-fit: cover;
+      margin: 0 auto;
+      display: block
+    }
+
+    .product-image {
+      width: 100%;
+      height: 180px;
+      overflow: hidden
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .product-details {
+      padding: 15px
+    }
+
+    .product-details h4 {
+      font-size: 16px;
+      margin-bottom: 8px;
+      color: #000
+    }
+
+    .product-details p {
+      font-size: 13px;
+      color: #666;
+      line-height: 1.5
+    }
+
+    .testimonial-card {
+      padding: 20px
+    }
+
+    .testimonial-user {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 15px
+    }
+
+    .testimonial-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      overflow: hidden
+    }
+
+    .testimonial-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .testimonial-user-info h5 {
+      margin: 0;
+      font-size: 16px;
+      color: #000
+    }
+
+    .testimonial-user-info p {
+      margin: 0;
+      font-size: 12px;
+      color: #6c757d
+    }
+
+    .testimonial-message {
+      font-size: 14px;
+      color: #555;
+      font-style: italic;
+      line-height: 1.5
+    }
+
+    .slick-dots li button:before {
+      font-size: 10px;
+      color: #ccc
+    }
+
+    .slick-dots li.slick-active button:before {
+      color: #000 !important
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+      color: #000
+    }
+
+    @media(max-width:600px) {
+      .contact-grid {
+        grid-template-columns: 1fr
+      }
+
+      .sticky-btn-wrapper {
+        bottom: 15px;
+        right: 15px
+      }
+
+      .add-contact-btn {
+        padding: 12px 20px;
+        font-size: .9rem
+      }
+    }
+
+    @media(min-width:601px) {
+      .share-btn {
+        left: 50%;
+        right: auto;
+        margin-left: 250px
+      }
+    }
+
+    /* Enquiry Form */
+    .enquiry-form label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 6px
+    }
+
+    .enquiry-form input,
+    .enquiry-form select,
+    .enquiry-form textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid #e0e0e0;
+      border-radius: 10px;
+      font-family: Poppins, sans-serif;
+      font-size: 14px;
+      color: #333;
+      background: #f9f9f9;
+      outline: none;
+      transition: border-color .3s, box-shadow .3s;
+      margin-bottom: 16px
+    }
+
+    .enquiry-form input:focus,
+    .enquiry-form select:focus,
+    .enquiry-form textarea:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 0 3px rgba(0, 123, 255, .1);
+      background: #fff
+    }
+
+    .enquiry-form textarea {
+      resize: vertical;
+      min-height: 100px
+    }
+
+    .enquiry-form .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px
+    }
+
+    @media(max-width:480px) {
+      .enquiry-form .form-row {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .enquiry-submit-btn {
+      width: 100%;
+      padding: 14px;
+      background: #000;
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      font-family: Poppins, sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: all .3s;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, .25)
+    }
+
+    .enquiry-submit-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .4)
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="banner">
+      <video autoplay muted playsinline>
+        <source
+          src="https://www.dropbox.com/scl/fi/zkzq7hyd87ylpb51qesoz/bg.mp4?rlkey=laazn2mr6hssn7gob908fuhvm&st=sgo5xkkg&raw=1"
+          type="video/mp4">
+      </video>
+    </div>
+
+    <div class="profile-box">
+      <img
+        src="https://www.dropbox.com/scl/fi/xqokropseuv9i2m657ek9/prf_pht.jpg?rlkey=xynl3cy9vfhe9lek46vggktv3&st=8jp51ihg&raw=1"
+        alt="Profile" />
+      <h3>Himanshu Sahu</h3>
+      <p class="subtitle">Digital Marketing Specialist</p>
+      <p class="company">Unh India</p>
+      <p class="description">Social Media Marketing | Video Editing | Content Creation <br>Lead Generation | SEO | Web
+        Design | Graphic Design <br>Email Marketing | Bulk WhatsApp Marketing</p>
+      <div class="social-icons">
+        <a href="#" target="_blank" aria-label="Website"><i class="fa-solid fa-globe"></i></a>
+        <a href="https://www.facebook.com/unhindia" target="_blank" aria-label="Facebook"><i
+            class="fab fa-facebook"></i></a>
+        <a href="https://www.youtube.com/@unhindia" target="_blank" aria-label="Youtube"><i
+            class="fab fa-youtube"></i></a>
+        <a href="https://www.linkedin.com/in/himdev/" target="_blank" aria-label="LinkedIn"><i
+            class="fab fa-linkedin"></i></a>
+        <a href="https://wa.me/918700054398" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" target="_blank" aria-label="Location"><i class="fa-solid fa-location-dot"></i></a>
+      </div>
+    </div>
+
+    <div class="contact-grid">
+      <div class="info-card">
+        <h6><i class="fa-solid fa-envelope"></i> Email</h6>
+        <a href="mailto:unhindia@gmail.com">unhindia@gmail.com</a>
+      </div>
+      <div class="info-card">
+        <h6><i class="fa-solid fa-phone"></i> Mobile</h6>
+        <a href="tel:+918700054398">+91 87000 54398</a>
+      </div>
+      <div class="info-card full-width">
+        <h6><i class="fa-solid fa-location-dot"></i> Address</h6>
+        Office : Gali Robin Cinema, Subzi Mandi, Clock Tower, Delhi - 110007.
+      </div>
+    </div>
+
+    <div class="gallery-section section-island">
+      <h2 class="section-header">Video Editing Samples</h2>
+      <div class="gallery-slider">
+        <div class="gallery-item">
+          <div class="gallery-card">
+            <a href="https://youtube.com/shorts/xLUdlmGiNJk?si=U3Y6kHDAAuqPnnTG" target="_blank">
+              <img src="https://img.youtube.com/vi/xLUdlmGiNJk/hqdefault.jpg" alt="Watch Video">
+            </a>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-card">
+            <a href="https://youtube.com/shorts/9kfyB9oYNFM?si=yDMBwd4-TI2JPbZR" target="_blank">
+              <img src="https://img.youtube.com/vi/9kfyB9oYNFM/hqdefault.jpg" alt="Watch Video">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-section section-island">
+      <h2 class="section-header">Products</h2>
+      <div class="product-slider">
+        <div class="product-item">
+          <a href="https://apac1.api.revspire.io/pitchurl/?name=ACM-Beige--Grey-CollectionMAIN&id=ITV696133066616"
+            target="_blank" style="text-decoration:none">
+            <div class="product-card">
+              <div class="product-image">
+                <img
+                  src="https://bizcard.orbiz.in/uploads/vcards/products/2221/WhatsApp-Image-2025-02-09-at-2.22.16-PM.jpeg"
+                  alt="ACM Beige Collection">
+              </div>
+              <div class="product-details">
+                <h4>ACM Beige Collection</h4>
+                <p>Beige marble bring a radiant glow to your winter interiors. Their rich hues add warmth.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="product-item">
+          <a href="https://apac1.api.revspire.io/pitchurl/?name=ACM-White-CollectionMAIN&id=ITV711182303456"
+            target="_blank" style="text-decoration:none">
+            <div class="product-card">
+              <div class="product-image">
+                <img src="https://bizcard.orbiz.in/uploads/vcards/products/2220/White-Marble-Pic.jpeg"
+                  alt="ACM White Collection">
+              </div>
+              <div class="product-details">
+                <h4>ACM White Collection</h4>
+                <p>A comprehensive display of A-Class Marble diverse and premium quality stone collection.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="product-item">
+          <a href="https://www.aclassmarble.co.in/products.php?pid=2" target="_blank" style="text-decoration:none">
+            <div class="product-card">
+              <div class="product-image">
+                <img src="https://bizcard.orbiz.in/uploads/vcards/products/1418/Screenshot-2024-08-30-154930.jpg"
+                  alt="Pristine">
+              </div>
+              <div class="product-details">
+                <h4>Pristine</h4>
+                <p>White marble holds a popular spot among all other marble slabs. Known to inject a luxurious feel.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="product-item">
+          <a href="https://www.aclassmarble.co.in/products.php?pid=1" target="_blank" style="text-decoration:none">
+            <div class="product-card">
+              <div class="product-image">
+                <img src="https://bizcard.orbiz.in/uploads/vcards/products/1417/Screenshot-2024-08-30-154745.jpg"
+                  alt="Signature">
+              </div>
+              <div class="product-details">
+                <h4>Signature</h4>
+                <p>Unveil the unmatched aura that would leave no one unmoved with Statuario Marble in your interiors.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-section section-island">
+      <h2 class="section-header">Testimonials</h2>
+      <div class="testimonial-slider">
+        <div class="testimonial-item">
+          <div class="testimonial-card">
+            <div class="testimonial-user">
+              <div class="testimonial-avatar">
+                <img src="https://bizcard.orbiz.in/uploads/vcards/testimonials/1419/Screenshot-2024-08-30-155247.jpg"
+                  alt="Chandan Aggarwal">
+              </div>
+              <div class="testimonial-user-info">
+                <h5>Chandan Aggarwal</h5>
+                <p>E-Commerce Business</p>
+              </div>
+            </div>
+            <p class="testimonial-message">"Himanshu helped me with my business and I am very happy with his services."
+            </p>
+          </div>
+        </div>
+        <div class="testimonial-item">
+          <div class="testimonial-card">
+            <div class="testimonial-user">
+              <div class="testimonial-avatar">
+                <img
+                  src="https://www.dropbox.com/scl/fi/k8u4d25be91j7b47uitql/testo.jpg?rlkey=tgzfgwnwsmtydho2e3usbxmtv&st=7z76yss3&raw=1"
+                  alt="Dr. Shobhit Bhushan">
+              </div>
+              <div class="testimonial-user-info">
+                <h5>Dr. Shobhit Bhushan</h5>
+                <p>Managing Director | Fluidic Fashion Pvt. Ltd.</p>
+              </div>
+            </div>
+            <p class="testimonial-message">"Unh India helped me grow my YouTube channel and build high-converting sales
+              funnels that increased my sales. Professional, responsive, and highly recommended."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="qr-section section-island">
+      <h2 class="section-header">QR Code</h2>
+      <div class="qr-box">
+        <img id="qrCodeImg"
+          src="https://www.dropbox.com/scl/fi/tfco1n0fi8pj9q5m1o6vq/shashank_qr_code.webp?rlkey=i1hvx9z334w1n3u2z9avjqi6s&st=017d34o0&raw=1"
+          width="180" alt="QR" />
+      </div>
+    </div>
+
+    <!-- Enquiry Form -->
+    <div class="section-island" style="margin-bottom:100px">
+      <h2 class="section-header">Send an Enquiry</h2>
+      <form class="enquiry-form" id="enquiryForm" onsubmit="submitEnquiry(event)">
+        <div class="form-row">
+          <div>
+            <label for="enq-name">Your Name *</label>
+            <input type="text" id="enq-name" placeholder="e.g. Rahul Sharma" required>
+          </div>
+          <div>
+            <label for="enq-phone">Phone Number *</label>
+            <input type="tel" id="enq-phone" placeholder="+91 XXXXX XXXXX" required>
+          </div>
+        </div>
+        <label for="enq-email">Your Email</label>
+        <input type="email" id="enq-email" placeholder="yourname@example.com">
+        <label for="enq-service">Service Interested In *</label>
+        <select id="enq-service" required>
+          <option value="" disabled selected>-- Select a Service --</option>
+          <option>Social Media Marketing</option>
+          <option>Video Editing</option>
+          <option>Content Creation</option>
+          <option>Lead Generation</option>
+          <option>SEO</option>
+          <option>Web Design</option>
+          <option>Graphic Design</option>
+          <option>Email Marketing</option>
+          <option>Bulk WhatsApp Marketing</option>
+          <option>Other</option>
+        </select>
+        <label for="enq-message">Message</label>
+        <textarea id="enq-message" placeholder="Tell us about your requirements..."></textarea>
+        <button type="submit" class="enquiry-submit-btn">
+          <i class="fa-solid fa-paper-plane"></i> Send Enquiry
+        </button>
+      </form>
+    </div>
+
+    <p class="footer">Made with ❤️ by Unh India <br> © Copyright 2026 </p>
+  </div>
+
+  <div class="sticky-btn-wrapper">
+    <a href="https://a-classoverseas.github.io/shashank-sharma/shashank_sharma_a-class.vcf" download
+      class="add-contact-btn">
+      <i class="fas fa-address-card"></i>
+      Add to Contact
+    </a>
+  </div>
+
+  <div class="modal-overlay" id="imageModal">
+    <span class="modal-close" id="closeModal">&times;</span>
+    <img class="modal-content" id="modalImage" src="" alt="Profile">
+  </div>
+
+  <a href="javascript:void(0)" class="share-btn" onclick="shareProfile()" title="Share Profile">
+    <i class="fa-solid fa-share-nodes"></i>
+  </a>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.gallery-slider').slick({ dots: true, infinite: true, speed: 300, slidesToShow: 1, adaptiveHeight: true, autoplay: false, arrows: false });
+      $('.product-slider').slick({ dots: true, infinite: true, speed: 300, slidesToShow: 2, slidesToScroll: 1, autoplay: true, autoplaySpeed: 3000, arrows: false, responsive: [{ breakpoint: 480, settings: { slidesToShow: 1 } }] });
+      $('.testimonial-slider').slick({ dots: true, infinite: true, speed: 300, slidesToShow: 1, slidesToScroll: 1, autoplay: true, autoplaySpeed: 4000, arrows: false });
+    });
+
+    const profileImg = document.querySelector('.profile-box img'), modal = document.getElementById('imageModal'), modalImg = document.getElementById('modalImage'), closeModal = document.getElementById('closeModal'), qrCodeImg = document.getElementById('qrCodeImg');
+
+    profileImg.addEventListener('click', function () { modal.classList.add('active'); modalImg.src = this.src });
+    if (qrCodeImg) qrCodeImg.addEventListener('click', function () { modal.classList.add('active'); modalImg.src = this.src });
+    modal.addEventListener('click', function () { modal.classList.remove('active') });
+    closeModal.addEventListener('click', function () { modal.classList.remove('active') });
+
+    function shareProfile() {
+      if (navigator.share) {
+        navigator.share({ title: document.title, url: window.location.href }).catch(console.error);
+      } else {
+        navigator.clipboard.writeText(window.location.href).then(() => alert('Link copied to clipboard!')).catch(console.error);
+      }
+    }
+
+    function submitEnquiry(e) {
+      e.preventDefault();
+      const name = document.getElementById('enq-name').value.trim();
+      const phone = document.getElementById('enq-phone').value.trim();
+      const email = document.getElementById('enq-email').value.trim();
+      const service = document.getElementById('enq-service').value;
+      const message = document.getElementById('enq-message').value.trim();
+
+      const body = [
+        'Hello Himanshu,',
+        '',
+        'I am interested in your services. Here are my details:',
+        '',
+        'Name    : ' + name,
+        'Phone   : ' + phone,
+        (email ? 'Email   : ' + email : ''),
+        'Service : ' + service,
+        (message ? '' : ''),
+        (message ? 'Message : ' + message : ''),
+        '',
+        'Please get in touch with me at your earliest convenience.',
+        '',
+        'Thank you!'
+      ].filter(line => line !== undefined).join('\n');
+
+      const subject = encodeURIComponent('Enquiry: ' + service + ' - ' + name);
+      const bodyEnc = encodeURIComponent(body);
+      window.location.href = 'mailto:unhindia@gmail.com?subject=' + subject + '&body=' + bodyEnc;
+    }
+  </script>
+</body>
+
+</html>
